@@ -1,0 +1,38 @@
+<div class="retro-date-widget-panel" xmlns="http://www.w3.org/1999/html">
+  
+    <div class="input-container">
+        <div show-if-privilege="{{onBehalfOfPrivilege}}" style="    text-align: center;">
+            <label  class="retro-date-label">{{ 'PAYMENT_FORM_LABEL'|translate }}</label>
+          
+        </div>
+    </div>
+    <div class="input-container" >
+        <label class="retro-date-label">{{ 'SELECT_LABEL'|translate }}</label>
+        <select name="type" ng-model="payment"
+        ng-dropdown required 
+        ng-change="changeme()"
+        ng-options="option.type for option in options">
+    </select>
+
+       
+    </div>
+    <div class="input-container">
+        <div >
+            <label  class="retro-date-label">{{ 'FEES_LABEL'|translate }}</label>
+            <input type="text" class="retro-date-widget" ng-model="fees"
+                   bahmni-autocomplete />
+        </div>
+    </div>
+    <div class="input-container">
+        <div >
+            <label  class="retro-date-label">{{ 'NOTES_LABLE'|translate }}</label>
+            <textarea style="width: 200px;min-height: 100px;" 
+             type="text" class="retro-date-widget" ng-model="note"
+                   bahmni-autocomplete ></textarea>
+        </div>
+    </div>
+        <div class="retro-widget-button-wrapper" style="margin-left: 27%;    float: left;">
+            <button class="retro-widget-button ok_btn"ng-click="nextpage(payment,fees,note)">{{ 'SUBMIT_LABLE' | translate}}</button>
+    
+    </div> 
+</div>

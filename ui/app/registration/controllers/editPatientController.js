@@ -56,6 +56,7 @@ angular.module('bahmni.registration')
             })();
 
             $scope.update = function () {
+                $scope.patient.Ethiopian_DOB =$rootScope.dob;
                 addNewRelationships();
                 var errorMessages = Bahmni.Common.Util.ValidationUtil.validate($scope.patient, $scope.patientConfiguration.attributeTypes);
                 if (errorMessages.length > 0) {

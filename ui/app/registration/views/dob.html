@@ -1,11 +1,14 @@
 <article class="form-field dob-birthtime-wrapper" id="dob">
+ 
     <div class="field-attribute">
         <label for="birthdate">{{ ::'REGISTRATION_LABEL_DOB' | translate}}<span class="asterick" ng-show="::dobMandatory">*</span></label>
     </div>
     <div class="field-value">
         <input id="birthdate" type="date" ng-model="patient.birthdate"  max="{{::today}}"
+        ng-value="birthdatevalue"  
                ng-change="patient.calculateAge()" ng-blur="handleUpdate('birthdate')" ng-required="::dobMandatory">
     </div>
+
     <div class="showOn-desktop-registration">
         <div class="field-value">
             <input type="checkbox" ng-model="patient.birthdateEstimated" ng-blur="handleUpdate('birthdateEstimated')"
@@ -29,4 +32,50 @@
     <div ng-show="::showBirthTime" class="field-value">
         <input id="birthtime" type="time" ng-model="patient.birthtime" ng-blur="handleUpdate('birthtime')">
     </div>
+    <hr width="100%">
+    <!-- <div style="white-space: pre-wrap;">    
+    </div> -->
+    <link rel="stylesheet" href="css/redmond.calendars.picker.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery.plugin.js"></script>
+    
+    <script src="js/jquery.calendars.js"></script>
+    <script src="js/jquery.calendars.plus.js"></script>
+    <script src="js/jquery.calendars.picker.js"></script>
+    
+    <script src="js/jquery.calendars.ethiopian.js"></script>
+    <script src="js/jquery.calendars.ethiopian-am.js"></script>
+    <script type="text/javascript" src="js/jquery.calendars.picker-am.js"></script>
+    
+    <script>
+    $(function() {
+         var calendar = $.calendars.instance('ethiopian','am');
+        $('#popupDatepicker').calendarsPicker({calendar: calendar});
+        $('#inlineDatepicker').calendarsPicker({calendar: calendar, onSelect: showDate});
+    });
+
+    function showDate(date) {
+    }
+    </script>
+
+ <div style=" display:flex;
+ flex-wrap:initial;">
+        <div class="field-attribute">
+            <label for="birthtime">{{ ::'REGISTRATION_LABEL_DOB_ETHOPION' | translate}}</label>
+        </div>
+    	<div class='field-value' id='datetimepicker'>
+		    <input type="text"  id="popupDatepicker"   ng-model="patient.dob" ng-value="dob" placeholder="mm-dd-yyyy" 
+            ng-change="patient.calculateAge1()" autocomplete="off">
+            
+		    <!-- <span class="input-group-addon">
+		        <i  class="fa fa-calendar-o" style="    margin-left: -31px;
+                cursor: pointer;
+                font-size: 15px;
+                position: relative;
+                top: 10px;"></i>
+		    </span> -->
+		</div>
+    </div>
+    
 </article>
