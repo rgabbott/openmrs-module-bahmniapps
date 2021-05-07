@@ -326,5 +326,16 @@
     "EDIT_LABEL": "Edit",
     "INVESTIGATIONS_PANELS_HEADER_LABEL": "Panels",
     "INVESTIGATIONS_SELECTIONS_HEADER_LABEL": "Selection",
-    "CLINICAL_GO_TO_DASHBOARD_LABEL": "Go to IPD dashboard"
+    "CLINICAL_GO_TO_DASHBOARD_LABEL": "Go to IPD dashboard",
+
+    "PAYMENT_FORM_LABEL": "Payment Details",
+    "SELECT_LABEL": "Payment Type",
+    "CASH_PYMENT_LABEL": "Cash",
+    "CARD_PYMENT_LABEL": "Card",
+    "OTHER_LABEL": "Other",
+    "FEES_LABEL": "Amount",
+    "TAKE_PAYMENT_LABEL": "TAKE PAYMENT",
+    "NOTES_LABLE" : "Notes",
+    "SUBMIT_LABLE" :"Submit"
+
 }

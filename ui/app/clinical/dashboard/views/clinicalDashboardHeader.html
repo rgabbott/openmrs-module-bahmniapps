@@ -27,6 +27,14 @@
             <button class="toggle-patient" ng-click="toggleControlPanel()" ng-class="{'shift': showControlPanel, 'hide-ipad': availableBoards }">
                 <i class="fa fa-bars fa-white fa-large"></i>
             </button>
+            <div class="dashboard-date-picker" ng-controller="PatientListHeaderController">
+                <div class="retro-date-widget-wrapper fr">
+                    <div class="retro-date-widget-header fr">
+                        <button ng-click="popUpHandlerTakePayment()" show-if-privilege="{{retrospectivePrivilege}},{{onBehalfOfPrivilege}},{{locationPickerPrivilege}}" ng-if="getTitle()">Payment</button>
+
+                    </div>
+                </div>
+            </div>
             <button class="confirm save-consultation" ng-show="availableBoards" single-click="save()" accesskey="{{'SAVE_ACCESS_KEY' | translate}}" ng-class="{'hideSaveText':availableBoards.length > 6}">
                 <i class="fa fa-save"></i>
                 <span class="text" ng-bind-html="'CLINICAL_SAVE_TRANSLATION_KEY'| translate"></span>

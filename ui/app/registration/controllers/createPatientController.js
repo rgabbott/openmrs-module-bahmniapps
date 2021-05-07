@@ -128,6 +128,7 @@ angular.module('bahmni.registration')
             };
 
             var createPatient = function (jumpAccepted) {
+                $scope.patient.Ethiopian_DOB =$rootScope.dob;
                 return patientService.create($scope.patient, jumpAccepted).then(function (response) {
                     copyPatientProfileDataToScope(response);
                 }, function (response) {
